@@ -82,7 +82,7 @@ function Card() {
       let [responseData] = response.data;
       setData(responseData);
     } catch (error) {
-      setError('Error fetching data from the API')
+      setError("Error fetching data from the API");
       console.log("Error", error);
     } finally {
       setLoading(false);
@@ -111,6 +111,7 @@ function Card() {
         />
       </div>
       {loading && <p>Loading...</p>}
+      {error && <p>{error}</p>}
       {data !== null && (
         <Country>
           <Image src={data.flags.png} alt="" />
